@@ -1,0 +1,648 @@
+/* ========================================
+   DesignDesk - Job Application System
+   Professional Purple & White Theme
+======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #6c4ce3;
+    --primary-dark: #5635c5;
+    --primary-light: #f0ebff;
+    --background: #f7f8fc;
+    --surface: #ffffff;
+    --text: #20243a;
+    --text-muted: #737891;
+    --border: #e5e7f0;
+    --success: #15803d;
+    --success-bg: #dcfce7;
+    --danger: #dc2626;
+    --danger-bg: #fee2e2;
+    --shadow: 0 8px 30px rgba(35, 30, 80, 0.06);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+/* General layout */
+
+.container {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+}
+
+main,
+.main-content {
+    padding: 40px 0 60px;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--text);
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 800;
+    letter-spacing: -1.2px;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+p {
+    color: var(--text-muted);
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+/* Header / Navigation */
+
+header,
+.navbar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 0;
+}
+
+header .container,
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo,
+.brand {
+    color: var(--primary);
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+}
+
+.logo a,
+.brand a {
+    color: inherit;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+nav a {
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+/* Hero section */
+
+.hero {
+    padding: 45px 0 30px;
+}
+
+.hero h1 {
+    margin-bottom: 12px;
+}
+
+.hero p {
+    max-width: 650px;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.eyebrow,
+.section-label {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 6px 12px;
+    background: var(--primary-light);
+    color: var(--primary);
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Cards and sections */
+
+.card,
+.form-card,
+.table-card,
+.content-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+.card,
+.form-card,
+.content-card {
+    padding: 28px;
+}
+
+.form-card {
+    margin-bottom: 30px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.section-header p {
+    margin-top: 5px;
+}
+
+/* Form layout */
+
+form {
+    width: 100%;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 18px;
+}
+
+.form-group.full-width,
+.full-width {
+    grid-column: 1 / -1;
+}
+
+label {
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #dfe2ed;
+    border-radius: 9px;
+    background: #fff;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input,
+select {
+    min-height: 46px;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #a0a4b7;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(108, 76, 227, 0.12);
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: #b7a9ef;
+}
+
+.form-help,
+.help-text {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+/* Buttons */
+
+button,
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    min-height: 42px;
+    padding: 11px 18px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    background: var(--primary);
+    color: #fff;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+button:hover,
+.btn:hover {
+    background: var(--primary-dark);
+    color: #fff;
+    box-shadow: 0 5px 14px rgba(108, 76, 227, 0.2);
+    transform: translateY(-1px);
+}
+
+button:active,
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-secondary,
+button.secondary {
+    background: #fff;
+    color: var(--text);
+    border-color: var(--border);
+}
+
+.btn-secondary:hover,
+button.secondary:hover {
+    background: #f5f3ff;
+    color: var(--primary);
+}
+
+.btn-danger,
+button.danger {
+    background: var(--danger);
+    color: #fff;
+}
+
+.btn-danger:hover,
+button.danger:hover {
+    background: #b91c1c;
+}
+
+.btn-small {
+    min-height: 34px;
+    padding: 7px 11px;
+    font-size: 12px;
+}
+
+.form-actions,
+.button-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+/* Alerts / status messages */
+
+.alert,
+.message,
+.success-message,
+.error-message {
+    margin-bottom: 22px;
+    padding: 14px 16px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.alert-success,
+.success-message {
+    background: var(--success-bg);
+    border-color: #bbf7d0;
+    color: var(--success);
+}
+
+.alert-danger,
+.error-message {
+    background: var(--danger-bg);
+    border-color: #fecaca;
+    color: #b91c1c;
+}
+
+/* Application table */
+
+.table-card {
+    overflow: hidden;
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 24px 26px;
+    border-bottom: 1px solid var(--border);
+}
+
+.table-header p {
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    white-space: nowrap;
+}
+
+thead {
+    background: #f8f7fc;
+}
+
+th {
+    padding: 15px 18px;
+    color: #686d85;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    border-bottom: 1px solid var(--border);
+}
+
+td {
+    padding: 16px 18px;
+    border-bottom: 1px solid #eff0f6;
+    color: #4b5067;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+tbody tr {
+    transition: background 0.15s ease;
+}
+
+tbody tr:hover {
+    background: #faf9ff;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+td strong {
+    color: var(--text);
+    font-weight: 700;
+}
+
+/* Position and status badges */
+
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.badge-success {
+    background: var(--success-bg);
+    color: var(--success);
+}
+
+.badge-danger {
+    background: var(--danger-bg);
+    color: var(--danger);
+}
+
+/* Table actions */
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.actions a,
+.actions button {
+    min-height: 32px;
+    padding: 6px 10px;
+    font-size: 11px;
+}
+
+.actions form {
+    width: auto;
+    margin: 0;
+}
+
+/* Empty table message */
+
+.empty-state {
+    padding: 45px 20px;
+    text-align: center;
+}
+
+.empty-state h3 {
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    margin-bottom: 18px;
+}
+
+/* Edit page */
+
+.page-heading {
+    margin-bottom: 26px;
+}
+
+.page-heading p {
+    margin-top: 8px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* Footer */
+
+footer {
+    margin-top: 50px;
+    padding: 24px 0;
+    border-top: 1px solid var(--border);
+    background: #fff;
+    text-align: center;
+}
+
+footer p {
+    font-size: 12px;
+}
+
+/* Utility classes */
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-1 {
+    margin-top: 8px;
+}
+
+.mt-2 {
+    margin-top: 16px;
+}
+
+.mb-1 {
+    margin-bottom: 8px;
+}
+
+.mb-2 {
+    margin-bottom: 16px;
+}
+
+/* Responsive design */
+
+@media (max-width: 768px) {
+    .container {
+        width: 94%;
+    }
+
+    main,
+    .main-content {
+        padding-top: 25px;
+    }
+
+    .hero {
+        padding-top: 30px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-group.full-width,
+    .full-width {
+        grid-column: auto;
+    }
+
+    .card,
+    .form-card,
+    .content-card {
+        padding: 20px;
+    }
+
+    .table-header {
+        padding: 20px;
+    }
+
+    header .container,
+    .navbar .container {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .form-actions,
+    .button-group {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .form-actions button,
+    .button-group button,
+    .form-actions .btn,
+    .button-group .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 27px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .card,
+    .form-card,
+    .content-card {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    input,
+    select,
+    textarea {
+        font-size: 16px;
+    }
+}
